@@ -11,9 +11,11 @@ export default {
 
     theme: {
         extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+            colors: {
+                p1dark: '#3B3030',
+                p2dark: '#664343',
+                accent: '#FFF0D1',
+            }
         },
     },
 
