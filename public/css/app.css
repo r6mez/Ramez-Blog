@@ -57,6 +57,8 @@ a {
     color: var(--primary);
     text-decoration: none;
     transition: color 0.2s;
+    padding: 0;
+    margin: 0;
 }
 a:hover {
     color: var(--primary-dark);
@@ -142,6 +144,24 @@ input[type="checkbox"]:checked::after {
     background: var(--primary-dark);
 }
 
+/* Anchor logout link styled as a normal nav link */
+.anchor-logout {
+    color: var(--fg-light);
+    margin-left: 18px;
+    font-weight: 500;
+    background: none;
+    border: none;
+    padding: 0;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-decoration: none;
+}
+.anchor-logout:hover {
+    color: var(--primary-dark);
+    text-decoration: underline;
+}
+
 .error {
     color: var(--error);
     font-size: 0.95em;
@@ -177,10 +197,202 @@ nav a:hover {
 }
 
 .logo {
-    width: 48px;
-    height: 48px;
+    width: 120px;
+    height: auto;
     display: block;
     margin: 0 auto 16px auto;
+}
+
+/* Dropdown styles */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-trigger {
+    cursor: pointer;
+}
+.dropdown-menu {
+    position: absolute;
+    z-index: 50;
+    margin-top: 8px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    background: var(--bg-soft);
+    min-width: 160px;
+    display: none;
+}
+.dropdown-menu[style*="display: block"], .dropdown-menu[x-show="open"] {
+    display: block;
+}
+.dropdown-content {
+    padding: 8px 0;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+}
+.dropdown-link {
+    display: block;
+    width: 100%;
+    padding: 10px 16px;
+    color: var(--fg-main);
+    background: none;
+    border: none;
+    text-align: left;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.dropdown-link:hover, .dropdown-link:focus {
+    background: var(--bg-muted);
+    color: var(--primary);
+}
+.dropdown-width-48 { width: 192px; }
+.dropdown-right { right: 0; left: auto; }
+.dropdown-left { left: 0; right: auto; }
+.dropdown-top { top: 0; }
+
+/* Modal styles */
+.modal-outer {
+    position: fixed;
+    inset: 0;
+    overflow-y: auto;
+    z-index: 1000;
+    padding: 24px 0;
+}
+.modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+}
+.modal-backdrop-bg {
+    position: absolute;
+    inset: 0;
+    background: var(--bg-muted);
+    opacity: 0.75;
+}
+.modal-inner {
+    margin: 40px auto 0 auto;
+    background: var(--bg-soft);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 32px;
+    max-width: 480px;
+    width: 100%;
+    z-index: 1002;
+    position: relative;
+}
+.modal-sm { max-width: 320px; }
+.modal-md { max-width: 400px; }
+.modal-lg { max-width: 600px; }
+.modal-xl { max-width: 800px; }
+.modal-2xl { max-width: 900px; }
+
+/* Primary button */
+.primary-button, .button, button, input[type="submit"] {
+    background: var(--primary);
+    color: var(--bg-soft);
+    border: none;
+    border-radius: var(--radius);
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.primary-button:hover, .button:hover, button:hover, input[type="submit"]:hover {
+    background: var(--primary-dark);
+}
+
+/* Responsive nav link */
+.responsive-nav-link {
+    display: block;
+    width: 100%;
+    padding: 10px 18px;
+    border-left: 4px solid transparent;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--fg-main);
+    background: none;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.responsive-nav-link.active {
+    border-left: 4px solid var(--primary);
+    color: var(--primary);
+    background: var(--bg-muted);
+}
+.responsive-nav-link:hover, .responsive-nav-link:focus {
+    background: var(--bg-muted);
+    color: var(--primary);
+}
+
+/* Text input */
+.text-input, input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background-color: var(--bg-muted);
+    color: var(--fg-main);
+    transition: border 0.2s;
+}
+.text-input:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="password"]:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* Section title */
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--fg-main);
+    margin-bottom: 8px;
+}
+
+/* Section description */
+.section-description {
+    font-size: 1rem;
+    color: var(--fg-light);
+}
+
+/* Section form and modal form */
+.section-form, .modal-form {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form actions and modal actions */
+.form-actions, .modal-actions {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-top: 12px;
+    justify-content: flex-start;
+}
+
+/* Info message */
+.info-message {
+    font-size: 0.95em;
+    color: var(--fg-main);
+    margin-top: 4px;
+}
+
+/* Link button */
+.link-button {
+    background: none;
+    border: none;
+    color: var(--primary);
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 1em;
+    padding: 0;
+    margin-left: 8px;
+    transition: color 0.2s;
+}
+.link-button:hover {
+    color: var(--primary-dark);
 }
 
 @media (max-width: 900px) {
@@ -190,6 +402,7 @@ nav a:hover {
         width: 98vw;
         min-width: 0;
         padding: 16px;
+        box-sizing: border-box;
     }
 }
 
@@ -200,9 +413,10 @@ nav a:hover {
         width: 100vw;
         min-width: 0;
         margin: auto;
-        padding: 8px;
+        padding: 12px;
         border-radius: 0;
         box-shadow: none;
+        background: none; /* Remove background for mobile */
     }
     .header {
         font-size: 1.2rem;
