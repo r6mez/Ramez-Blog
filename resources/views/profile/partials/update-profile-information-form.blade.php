@@ -1,11 +1,11 @@
 <section>
     <header>
         <h2 class="section-title">
-            {{ __('Profile Information') }}
+            Profile Information
         </h2>
 
         <p class="section-description">
-            {{ __("Update your account's profile information and email address.") }}
+            Update your account's profile information and email address.
         </p>
     </header>
 
@@ -31,16 +31,16 @@
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
                 <div>
                     <p class="info-message">
-                        {{ __('Your email address is unverified.') }}
+                            Your email address is unverified.
 
                         <button form="send-verification" class="link-button">
-                            {{ __('Click here to re-send the verification email.') }}
+                            Click here to re-send the verification email.
                         </button>
                     </p>
 
                     @if (session('status') === 'verification-link-sent')
                         <p class="success">
-                            {{ __('A new verification link has been sent to your email address.') }}
+                            A new verification link has been sent to your email address.
                         </p>
                     @endif
                 </div>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="form-actions">
-            <x-primary-button>{{ __('Save') }}</x-primary-button>
+            <x-primary-button>Save</x-primary-button>
 
             @if (session('status') === 'profile-updated')
                 <p
@@ -56,8 +56,8 @@
                     x-show="show"
                     x-transition
                     x-init="setTimeout(() => show = false, 2000)"
-                    class="info-message"
-                >{{ __('Saved.') }}</p>
+                    class="success"
+                >Saved.</p>
             @endif
         </div>
     </form>

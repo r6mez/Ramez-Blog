@@ -1,7 +1,4 @@
-<x-app-layout>
-    <h2 class="header">Profile</h2>
-
-    
+<x-app-layout>    
     <div class="container">
         <div>
             @include('profile.partials.update-profile-information-form')

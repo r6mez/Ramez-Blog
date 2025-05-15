@@ -27,7 +27,14 @@ body {
     min-height: 100vh;
 }
 
-/* Centered layout for guest pages */
+.container {
+    max-width: 420px;
+    width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+    padding: 24px;
+}
+
 .centered-body {
     display: flex;
     align-items: center;
@@ -38,14 +45,6 @@ body {
 
 .centered-container {
     min-width: 340px;
-}
-
-.container {
-    max-width: 420px;
-    width: 100%;
-    min-width: 0;
-    margin: 0 auto;
-    padding: 24px;
 }
 
 .form-group {
@@ -77,6 +76,27 @@ input[type="password"] {
     background-color: var(--bg-muted);
     transition: border 0.2s;
     color: var(--fg-main);
+}
+
+.about-textarea {
+    width: 100%;
+    min-height: 90px;
+    max-height: 260px;
+    box-sizing: border-box;
+    padding: 10px 12px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background-color: var(--bg-muted);
+    color: var(--fg-main);
+    resize: vertical;
+    transition: border 0.2s;
+    font-family: var(--font-main);
+}
+
+.about-textarea:focus {
+    border: 2px solid var(--primary);
+    outline: none;
 }
 
 
@@ -145,11 +165,60 @@ input[type="checkbox"]:checked::after {
 .error {
     color: var(--error);
     font-size: 0.95em;
-    margin-top: 4px;
+    margin-top: 10px;
 }
 
 .success {
     color: var(--success);
     font-size: 0.95em;
-    margin-top: 4px;
+    margin-top: 10px;
+}
+
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.nav-title {
+    padding: 0;
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+
+.nav-link {
+    margin-left: 20px;
+    color: var(--fg-main);
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    margin-left: 20px;
+    color: var(--primary-dark);
+    text-decoration: none;
+}
+
+.nav-link-active {
+    margin-left: 20px;
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+
+.home-container {
+    width: 100%;
+
+}
+
+.home-left{
+
+}
+
+.home-right{
+    
 }

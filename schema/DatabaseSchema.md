@@ -4,10 +4,10 @@ users
 (id, name, email, google_token, admin)
 
 owner
-(id, name, about, img)
+(id, name, about)
 
 socials
-(name, url, icon,)
+(name, url, icon_url)
 
 experience
 (id, company_name, location)
