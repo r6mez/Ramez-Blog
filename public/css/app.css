@@ -3,6 +3,7 @@
 
 :root {
     --bg-main: #282828;
+    --bg-steben: #0c0c0c;
     --bg-soft: #3c3836;
     --bg-muted: #504945;
     --fg-main: #ebdbb2;
@@ -20,7 +21,7 @@
 
 body {
     font-family: var(--font-main);
-    background: var(--bg-main);
+    background: linear-gradient(135deg, var(--bg-main) 0%, var(--bg-steben) 200%);
     color: var(--fg-main);
     margin: 0;
     padding: 0;
@@ -212,13 +213,79 @@ input[type="checkbox"]:checked::after {
 
 .home-container {
     width: 100%;
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    padding: 100px;
 }
 
-.home-left{
-
+.home-name {
+    font-size: 100px;
+    font-weight:900;
+    line-height: 90px;
 }
 
+.home-logo {
+    height: 500px;
+    width: auto;
+}
 .home-right{
     
+}
+
+.home-name-word {
+    display: block;
+}
+
+.about-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: var(--bg-soft);
+    border: none;
+    border-radius: var(--radius);
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    font-weight:600;
+    cursor: pointer;
+    transition: background 1s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s;
+    box-shadow: var(--shadow);
+}
+
+.about-btn:hover {
+    background: linear-gradient(90deg, var(--primary-dark) 0%, var(--primary) 100%);
+}
+
+.about-btn-arrow {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 6px;
+    transition: transform 0.2s;
+}
+
+.about-btn:hover .about-btn-arrow {
+    transform: translateX(4px);
+}
+
+@media (max-width: 700px) {
+    .home-container {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 20px;
+    }
+    .home-logo {
+        height: auto;
+        width: 100%;
+        max-width: 340px;
+        margin: 0 auto;
+        display: block;
+    }
+    .home-name {
+        font-size: 80px;
+        line-height: 70px;
+    }
 }

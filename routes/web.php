@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\OwnerController;
@@ -13,7 +14,10 @@ Route::middleware('auth')->group(function () {
 }); 
 
 Route::get('/', [HomeController::class, 'get'])->name("home");
+
 Route::get('/dashboard', [DashboardController::class, 'view'])->name("dashboard");
 Route::patch('/dashboard', [OwnerController::class, 'update'])->name('owner.update');
+
+Route::get('/about', [aboutController::class, 'view'])->name('about');
 
 require __DIR__.'/auth.php';
