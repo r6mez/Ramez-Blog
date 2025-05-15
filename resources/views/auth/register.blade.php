@@ -35,8 +35,8 @@
         </div>
 
         <div style="display:flex;justify-content:space-between;align-items:center;">
-            <a href="{{ route('login') }}">Already registered?</a>
-            <button type="submit" class="button">Register</button>
+            <a class="link" href="{{ route('login') }}">Already registered?</a>
+            <button type="submit" class="primary-button">Register</button>
         </div>
     </form>
 </x-guest-layout>

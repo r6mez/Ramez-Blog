@@ -8,10 +8,11 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
         <div>
-            @include('layouts.navigation')
+            @include('components.navigation')
 
             <main>
                 {{ $slot }}

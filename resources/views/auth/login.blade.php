@@ -25,9 +25,9 @@
 
         <div style="display:flex;justify-content:space-between;align-items:center;">
             @if (Route::has('password.request'))
-                <div>Don't have an account?  <a href="{{ route('register') }}">Sign up</a></div>
+                <div>Don't have an account?  <a class="link" href="{{ route('register') }}">Sign up</a></div>
             @endif
-            <button type="submit" class="button">Log in</button>
+            <button type="submit" class="primary-button">Log in</button>
         </div>
     </form>
 </x-guest-layout>

@@ -8,9 +8,10 @@
         <title>{{ config('app.name', 'Laravel') }}</title>
 
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body class="centered-body">
-        <div class="centered-container container">
+        <div class="centered-container">
             <div class="header">
                 <a href="/">
                     <x-application-logo class="logo" />
