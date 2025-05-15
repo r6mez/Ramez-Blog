@@ -1,28 +1,28 @@
 <nav>
     <div class="nav-container">
-        <div>
-            <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="nav-title">Ramez's Blog</x-nav-link>
+        <div class="nav-top">
+            <x-nav-link :href="route('home')" :active="request()->routeIs('home')" class="nav-title">
+                Ramez's Blog
+            </x-nav-link>
+
+            <button class="hamburger" onclick="document.getElementById('mobile-menu').classList.toggle('show')">
+                &#9776;
+            </button>
         </div>
-        <div>
-            <x-nav-link href="#" :active="request()->routeIs('about')">
-                About
-            </x-nav-link>
-            <x-nav-link href="#" :active="request()->routeIs('blog.*')">
-                Blog
-            </x-nav-link>
+
+        <div id="mobile-menu" class="nav-links">
+            <x-nav-link href="#" :active="request()->routeIs('about')">About</x-nav-link>
+
+            <x-nav-link href="#" :active="request()->routeIs('blog.*')">Blog</x-nav-link>
             @auth
                 @if (Auth::user()->isAdmin)
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        Dashboard
-                    </x-nav-link>            
+                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">Dashboard</x-nav-link>
                 @endif
                 <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.edit')">Profile</x-nav-link>
-
                 <form id="logout-form" method="POST" action="{{ route('logout') }}" style="display:none;">
                     @csrf
                 </form>
-                <a href="#" class="nav-link" style="margin-left:10px;"
-                   onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     Logout
                 </a>
             @else
