@@ -3,10 +3,6 @@
         <h2 class="section-title">
             Owner
         </h2>
-
-        <p class="section-description">
-            Update your owners information.
-        </p>
     </header>
 
     <form method="post" action="{{ route('owner.update') }}" class="section-form">
